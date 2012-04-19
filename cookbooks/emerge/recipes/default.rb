@@ -20,7 +20,7 @@
 
 # Install the newly unmasked version
  package "app-backup/duplicity" do
-#   version "2.7.6"
+   version "0.6.06"
    action :install
  end
 
