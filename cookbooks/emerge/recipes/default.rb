@@ -14,12 +14,17 @@
 #############################################
 
 # Unmask version 2.7.6 of libxml2
-# enable_package "dev-libs/libxml2" do
-#   version "2.7.6"
-# end
+ enable_package "dev-python/boto" do
+   version "1.4a"
+ end
 
 # Install the newly unmasked version
-# package "dev-libs/libxml2" do
+ package "app-backup/duplicity" do
 #   version "2.7.6"
-#   action :install
-# end
+   action :install
+ end
+
+
+
+
+
