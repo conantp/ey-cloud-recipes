@@ -37,6 +37,13 @@ if ['db_master', 'solo'].include?(node[:instance_role])
 	action :install
 	end
 
+	cron "integritive_cron" do 
+    	day '*'
+    	hour '2'
+    	minute '0' 
+    	user 'root' 
+    	command "./db/script/integritive.sh" 
+  end 
 end
 
 
