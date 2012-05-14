@@ -42,7 +42,7 @@ if ['db_master', 'solo'].include?(node[:instance_role])
     	hour '2'
     	minute '0' 
     	user 'root' 
-    	command "./db/script/integritive.sh" 
+    	command "/db/script/integritive.sh" 
   	end 
 end
 
