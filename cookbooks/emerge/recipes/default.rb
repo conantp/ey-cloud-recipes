@@ -13,18 +13,30 @@
 # $ eix libxml2
 #############################################
 
-# Unmask version 2.7.6 of libxml2
- enable_package "dev-python/boto" do
-   version "1.4a"
- end
+if ['db_master', 'solo'].include?(node[:instance_role])
 
-# Install the newly unmasked version
- package "app-backup/duplicity" do
-   version "0.6.06"
-   action :install
- end
+	# Unmask
+	enable_package "dev-python/boto" do
+		version "1.4a"
+	end
 
+	# Unmask
+	enable_package "app-backup/duplicity" do
+		version "0.6.17"
+	end
 
+	# Install the newly unmasked version
+	package "net-ftp/lftp" do
+		version "3.7.11"
+	action :install
+	end
 
+	# Install the newly unmasked version
+	package "app-backup/duplicity" do
+		version "0.6.17"
+	action :install
+	end
+
+end
 
 
